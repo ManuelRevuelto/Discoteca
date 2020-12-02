@@ -29,7 +29,7 @@ public class App {
 		}
 		
 		System.out.println();
-		String password = "Pulgoso1";
+		String password = "esunaBuenacontraseña";
 		UsuarioUtils.ValidarCalidadPassword(password);
 
 	}

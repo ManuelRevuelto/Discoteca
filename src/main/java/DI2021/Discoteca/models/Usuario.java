@@ -1,7 +1,7 @@
 package DI2021.Discoteca.models;
 
 public class Usuario {
-	
+
 	private String name;
 	private String email;
 	private String password;
@@ -16,13 +16,17 @@ public class Usuario {
 		this.email = email;
 	}
 
+	public String getEmail() {
+		return email;
+	}
+
 	public void setName(String name) {
 		this.name = name;
 	}
 
 	public String getName() {
 		return name;
-	}	
+	}
 
 	public String getPassword() {
 		return password;
@@ -31,9 +35,9 @@ public class Usuario {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
+
 	public String toString() {
 		return "The user is: " + this.name + ", " + email + " : " + this.password;
 	}
-	
+
 }
