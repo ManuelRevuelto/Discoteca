@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import DI2021.Discoteca.dao.DAO;
+import DI2021.Discoteca.dao.IDAO;
 import DI2021.Discoteca.models.Album;
 import DI2021.Discoteca.models.Usuario;
 import DI2021.Discoteca.services.AlbumRecoveryService;
@@ -27,7 +28,14 @@ public class App {
 			System.out.println(user);
 
 		}
-		
+		System.out.println();
+		IDAO idao = new IDAO(UsuarioRecoveryService.getAllUsuarios());
+		List<Usuario> usuar = idao.getAll();
+
+		for (Usuario usuario : usuar) {
+			System.out.println(usuario);
+		}
+
 		System.out.println();
 		String password = "esunaBuenacontraseña";
 		UsuarioUtils.ValidarCalidadPassword(password);
