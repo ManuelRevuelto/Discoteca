@@ -3,9 +3,9 @@
  */
 package DI2021.Discoteca.utils;
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
+import org.junit.Assert;
+
 
 /**
  * @author darioaxel
@@ -14,9 +14,12 @@ import org.junit.Test;
 public class UsuarioUtilsTest {
 
 	@Test
-	public void ValidarCalidadPassword() {
-		
-		fail("Not yet implemented");
+	public void Funciona() {
+		Assert.assertTrue(UsuarioUtils.ValidarCalidadPassword("pass67wword"));
+	}
+	@Test
+	public void Nofunciona() {
+		Assert.assertFalse(UsuarioUtils.ValidarCalidadPassword("passw"));
 	}
 
 }

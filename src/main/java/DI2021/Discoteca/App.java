@@ -1,9 +1,7 @@
 package DI2021.Discoteca;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import DI2021.Discoteca.dao.DAO;
 import DI2021.Discoteca.dao.IDAO;
 import DI2021.Discoteca.models.Album;
 import DI2021.Discoteca.models.Usuario;
@@ -31,13 +29,12 @@ public class App {
 		System.out.println();
 		IDAO idao = new IDAO(UsuarioRecoveryService.getAllUsuarios());
 		List<Usuario> usuar = idao.getAll();
-
 		for (Usuario usuario : usuar) {
 			System.out.println(usuario);
 		}
 
 		System.out.println();
-		String password = "esunaBuenacontraseña";
+		String password = "platano1";
 		UsuarioUtils.ValidarCalidadPassword(password);
 
 	}

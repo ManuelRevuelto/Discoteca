@@ -8,11 +8,9 @@ public class UsuarioUtils {
 		int caracterASCII, z = 0;
 		if (password.length() >= 8) {
 			for (int i = 0; i < password.length(); i++) {
-				if (bool) {
-					caracterASCII = password.charAt(i);
-					if (caracterASCII > 64 && caracterASCII < 91) {
-						z++;
-					}
+				caracterASCII = password.charAt(i);
+				if (caracterASCII > 47 && caracterASCII < 58) {
+					z++;
 				}
 			}
 			if (z > 0) {
@@ -24,5 +22,6 @@ public class UsuarioUtils {
 		}
 
 		return bool;
+	
 	}
 }

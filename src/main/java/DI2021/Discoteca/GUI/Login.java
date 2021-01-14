@@ -25,11 +25,13 @@ import javax.swing.JTextPane;
 import java.awt.Color;
 import javax.swing.UIManager;
 
+@SuppressWarnings("serial")
 public class Login extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField_Email;
 	private JPasswordField passwordField;
+	int click = 0;
 
 	/**
 	 * Launch the application.
@@ -86,9 +88,9 @@ public class Login extends JFrame {
 
 		passwordField = new JPasswordField();
 		
-		int click;
 		JButton btnContinuar = new JButton("CONTINUAR");
 		btnContinuar.addActionListener(new ActionListener() {
+			@SuppressWarnings("deprecation")
 			public void actionPerformed(ActionEvent e) {
 
 				for (Usuario user : UsuarioRecoveryService.getAllUsuarios()) {
@@ -98,18 +100,19 @@ public class Login extends JFrame {
 							dispose();
 						} else {
 							txtpnErrorEnEl.setVisible(true);
+							click++;
+							if (click >= 3) {
+								dispose();
+							}
 						}
 					} else {
 						txtpnUsuarioNoExiste.setVisible(true);
-						
-						
+
 					}
 				}
 
 			}
 		});
-		
-
 
 		btnContinuar.setFont(new Font("Tahoma", Font.PLAIN, 16));
 
