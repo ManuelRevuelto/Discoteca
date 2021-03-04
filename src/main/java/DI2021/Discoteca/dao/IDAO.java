@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import DI2021.Discoteca.models.Usuario;
+import DI2021.Discoteca.services.UsuarioRecoveryService;
 
 public class IDAO implements DAO<Usuario> {
 	List<Usuario> misUsuarios = new ArrayList<Usuario>();
@@ -25,8 +26,9 @@ public class IDAO implements DAO<Usuario> {
 
 	@Override
 	public void save(Usuario t) {
-		// TODO Auto-generated method stub
-
+		if (!misUsuarios.contains(t) && misUsuarios.add(t)) {
+            UsuarioRecoveryService.saveAllUsuarios(misUsuarios);
+        }
 	}
 
 	@Override
